@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Резюме - Инженер-программист / Web3 Specialist</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .main-role {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 6px;
+}
+
+.focus {
+    font-size: 0.95em;
+    color: #7f8c8d;
+    margin-bottom: 14px;
+}
+
+.meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 0.9em;
+    color: #95a5a6;
+    margin-bottom: 18px;
+}
+
+.contact-info {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.contact-info a {
+    font-size: 0.95em;
+    color: #3498db;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            padding: 40px;
+        }
+
+        header {
+            display: flex;
+            align-items: flex-start;
+            gap: 30px;
+            border-bottom: 3px solid #2c3e50;
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+        }
+
+        .photo-container {
+            flex-shrink: 0;
+        }
+
+        .photo {
+            width: 210px;
+            height: 210px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 3px solid #ecf0f1;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .header-info {
+            flex: 1;
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 2.2em;
+            margin-bottom: 8px;
+            margin-top: 0;
+        }
+
+        .birth-date {
+            color: #7f8c8d;
+            font-size: 0.95em;
+            margin-bottom: 8px;
+        }
+
+        .education-info {
+            color: #7f8c8d;
+            font-size: 0.95em;
+            margin-bottom: 15px;
+        }
+
+        .education-info strong {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .title {
+            color: #7f8c8d;
+            font-size: 1.1em;
+            font-weight: normal;
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 0.95em;
+        }
+
+        .contact-info span {
+            color: #555;
+        }
+
+        .contact-info a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            margin-bottom: 35px;
+        }
+
+        h2 {
+            color: #2c3e50;
+            font-size: 1.5em;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        .highlight {
+            color: #3498db;
+            font-weight: 600;
+        }
+
+        .highlight a {
+            color: #3498db;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-bottom 0.2s;
+        }
+
+        .highlight a:hover {
+            border-bottom: 1px solid #3498db;
+            text-decoration: none;
+        }
+
+        .achievement-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+
+        .experience-item, .education-item, .project-item {
+            margin-bottom: 25px;
+            padding-left: 20px;
+            border-left: 3px solid #ecf0f1;
+            padding-bottom: 15px;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            margin-bottom: 8px;
+        }
+
+        .item-title {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .item-company {
+            color: #7f8c8d;
+            font-style: italic;
+        }
+
+        .item-date {
+            color: #95a5a6;
+            font-size: 0.9em;
+        }
+
+        .item-location {
+            color: #95a5a6;
+            font-size: 0.9em;
+        }
+
+        ul {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 6px;
+            color: #555;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .skill-category h3 {
+            color: #2c3e50;
+            font-size: 1em;
+            margin-bottom: 8px;
+        }
+
+        .skill-category p {
+            color: #555;
+            font-size: 0.95em;
+        }
+
+        .cert-item {
+            margin-bottom: 12px;
+            padding-left: 15px;
+        }
+
+        .cert-item strong {
+            color: #2c3e50;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+
+            .contact-info a {
+                color: #333;
+            }
+
+            .achievement-badge {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .highlight {
+                color: #2c3e50;
+                font-weight: bold;
+            }
+
+            .highlight a {
+                color: #2c3e50;
+                text-decoration: underline;
+            }
+
+            .photo {
+                border: 2px solid #ddd;
+                box-shadow: none;
+            }
+
+            header {
+                page-break-inside: avoid;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .photo {
+                width: 180px;
+                height: 180px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .item-header {
+                flex-direction: column;
+            }
+
+            .item-date {
+                margin-top: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="photo-container">
+                <div class="photo">
+                    <img src="437074764_1825722841209543_2617884570719705095_n.jpg" alt="Фото">
+                </div>
+            </div>
+            <div class="header-info">
+                <h1>Зеленков Константин</h1>
+            
+                <div class="main-role">
+                    Инженер-программист · Web3 Specialist
+                </div>
+            
+                <div class="focus">
+                    Blockchain • Community Management • Technical Support
+                </div>
+            
+                <div class="meta">
+                    <span>📍 11.04.2004</span>
+                    <span>🎓 БрГТУ — Инженер-программист (2021-2025)</span>
+                </div>
+            
+                <div class="contact-info">
+                    <a href="mailto:doulot23@gmail.com">📧 doulot23@gmail.com</a>
+                    <a href="https://t.me/KostyaZ3" target="_blank">📱 Telegram</a>
+                    <a href="https://github.com/Pandusss" target="_blank">💻 GitHub</a>
+                    <span>☎️ +375297228696</span>
+                </div>
+            </div>
+        </header>
+
+        <section id="about">
+            <h2>О себе</h2>
+            <p>Инженер-программист с глубоким пониманием блокчейн-технологий и <b>7-летним опытом</b> управления сообществами. Владелец Telegram-канала <b>(44,000+ подписчиков)</b> о криптовалютах. Являюсь контрибьютором и сотрудником технической поддержки крупнейших Web3 проектов <span class="highlight">(<a href="https://t.me/dogs" target="_blank">DOGS</a>, <a href="https://t.me/notcoin" target="_blank">Notcoin</a>, <a href="https://t.me/sticker_community" target="_blank">Sticker Pack</a>, <a href="https://t.me/VoidNotHere" target="_blank">Void</a>)</span> с аудиторией более <b>10 миллионов пользователей</b>. Сочетаю глубокие технические знания (понимаю работу ПО «под капотом») с развитыми навыками коммуникации и стрессоустойчивостью.</p>
+        </section>
+
+        <section id="experience">
+            <h2>Опыт работы</h2>
+            
+            <div class="experience-item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">Technical Support Specialist / Contributor</div>
+                        <div class="item-company">Telegram Ecosystem</div>
+                    </div>
+                    <div>
+                        <div class="item-date">Апрель 2024 — настоящее время</div>
+                        <div class="item-location">1 год и 10 месяцев</div>
+                    </div>
+                </div>
+                <ul>
+                    <li>Обеспечение технической поддержки для проектов с аудиторией более 10 миллионов пользователей (<span class="highlight"><a href="https://t.me/dogs" target="_blank">DOGS</a></span>) и 1 миллиона (<span class="highlight"><a href="https://t.me/sticker_community" target="_blank">Sticker Pack</a></span>)</li>
+                    <li>Контрибьютор в топовых Web3 проектах: <span class="highlight"><a href="https://t.me/dogs" target="_blank">DOGS</a>, <a href="https://t.me/notcoin" target="_blank">Notcoin</a>, <a href="https://t.me/sticker_community" target="_blank">Sticker Pack</a>, <a href="https://t.me/VoidNotHere" target="_blank">Void</a></span></li>
+                    <li>Взаимодействие с командой разработки для быстрого устранения багов</li>
+                    <li>Работа в условиях высокой нагрузки во время листингов и крупных обновлений</li>
+                    <li>Использование блокчейн-эксплореров и технических инструментов для диагностики проблем пользователей</li>
+                </ul> 
+            </div>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">Автор и владелец телеграм-канала</div>
+                        <div class="item-company">Pandus Talks</div>
+                    </div>
+                    <div>
+                        <div class="item-date">Июнь 2023 — настоящее время</div>
+                        <div class="item-location">2 года и 9 месяцев</div>
+                    </div>
+                </div>
+                <ul>
+                    <li>Создание и развитие канала с нуля до <b>44,000 подписчиков</b></li>
+                    <li>Глубокая аналитика рынка криптовалют и блокчейн-технологий</li>
+                    <li>Создание визуального контента и инфографики (Adobe Photoshop, Figma, Blender, видео-редакторы)</li>
+                    <li>Управление сообществом, модерация и выстраивание доверительных отношений с аудиторией</li>
+                    <li>Высокая онлайн-активность и мониторинг трендов в режиме 24/7</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">Администратор игрового проекта</div>
+                        <div class="item-company">Space Era</div>
+                    </div>
+                    <div>
+                        <div class="item-date">Июль 2018 — Май 2023</div>
+                        <div class="item-location">4 года и 11 месяцев</div>
+                    </div>
+                </div>
+                <ul>
+                    <li>Управление игровым сообществом и администрирование серверов на протяжении 5 лет</li>
+                    <li>Разрешение конфликтных ситуаций и модерация чатов/форумов</li>
+                    <li>Организация и проведение ивентов для удержания аудитории</li>
+                    <li>Техническая диагностика проблем у пользователей и помощь в их устранении</li>
+                </ul>
+            </div>
+        </section>
+
+
+        <section id="skills">
+            <h2>Навыки</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Soft Skills</h3>
+                    <p>Стрессоустойчивость, внимательность к деталям, способность быстро усваивать большие объемы информации, работа в команде, проактивность</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Software & Design</h3>
+                    <p>Adobe Photoshop <b>(Expert)</b>, Blender, Figma, MS Office, AI Tools (LLM, Image Gen), продвинутые знания языков программирования (понимание архитектуры ПО)</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Blockchain & Web3</h3>
+                    <p>Глубокое понимание принципов работы блокчейна <b>(TON, Bitcoin, Ethereum, etc)</b>, опыт работы с кошельками, DEX, CEX, транзакциями и смарт-контрактами</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Собственные проекты</h2>
+            
+            <div class="project-item">
+                <div class="item-header">
+                    <div class="item-title">Pandus Talks <span class="achievement-badge">Telegram Channel</span></div>
+                    <div class="item-date"><a href="https://t.me/pandus_talks" target="_blank">@pandus_talks</a></div>
+                </div>
+                <p>Авторский Telegram-канал о криптовалютах и блокчейн-технологиях, созданный с нуля и развитый до <b>44,000+ подписчиков</b>. Публикую самые свежие криптоновости, анализ рынка, обзоры Web3-проектов и личное мнение по актуальным темам индустрии.</p>
+                <p>Контент включает: аналитические обзоры проектов экосистемы TON (и не только), анализ блокчейн-технологий, новости о листингах на биржах, обсуждение политических событий, влияющих на крипторынок, философские размышления о развитии Web3, а также интерактивные конкурсы для сообщества. Регулярно создаю визуальный контент (инфографика, видео) с использованием Adobe Photoshop, Figma, Blender, ИИ-инструментов.</p>
+            </div>
+
+            <div class="project-item">
+                <div class="item-header">
+                    <div class="item-title">CryptoWatcher <span class="achievement-badge">Telegram Mini App</span></div>
+                    <div class="item-date"><a href="https://t.me/CryptoWatcherr_bot" target="_blank">@CryptoWatcherr_bot</a></div>
+                </div>
+                <p>Telegram Mini App для отслеживания цен на криптовалюты в режиме реального времени с уведомлениями. Приложение собирает данные о ценах с нескольких бирж через WebSocket-соединения, обеспечивая актуальную и надежную информацию для пользователей.</p>
+                <p>Ключевые возможности: мониторинг цен в реальном времени с синхронизацией данных с ведущих криптобирж, настраиваемые уведомления о достижении целевых цен, которые доставляются непосредственно через Telegram, поддержка множественных торговых пар и интеграция с популярными биржами через WebSocket API.</p>
+            </div>
+
+            <div class="project-item">
+                <div class="item-header">
+                    <div class="item-title">Negarant <span class="achievement-badge">Telegram Mini App</span></div>
+                    <div class="item-date"><a href="https://t.me/negarant_bot" target="_blank">@Negarant</a></div>
+                </div>
+                <p>Telegram-бот для безопасного проведения обмена между двумя пользователями с функцией гаранта. Решает проблему доверия при обмене NFT, обеспечивая защиту обеих сторон.</p>
+                <p>Функциональность: создание безопасных обменов между двумя пользователями, автоматическое удержание средств на время проведения обмена, система проверки и подтверждения транзакций, защита от мошенничества и разрешение спорных ситуаций, интуитивный интерфейс.</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
